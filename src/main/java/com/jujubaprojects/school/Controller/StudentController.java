@@ -17,6 +17,7 @@ import com.jujubaprojects.school.Repository.StudentRepository;
 import com.jujubaprojects.school.Service.StudentService;
 
 @RestController
+
 public class StudentController {
     
     @Autowired
@@ -43,13 +44,13 @@ public class StudentController {
 
     }
 
-    @GetMapping("/school/showId/{id}")
+    @GetMapping("/showId/{id}")
     public ResponseEntity<?> findById(@PathVariable long id){
         return studentService.showId(id);
 
     }
 
-    @PutMapping("/school/toEdit/{id}")
+    @PutMapping("/school/toEdit")
     public ResponseEntity<?> edit(@RequestBody Student student){
         return studentService.toEdit(student);
 
@@ -57,11 +58,11 @@ public class StudentController {
 
     @GetMapping("/school/beginWith")
     public List<Student> begingWitch(){
-        return studentRepository.findByfirstnameStartsWith("V");
+        return studentRepository.findByfirstnameStartsWith("J");
 
     }
 
-    @GetMapping("/school/firstnames")
+    @GetMapping("/school/firstname")
     public List<Student> firstnames(){
         return studentRepository.findByfirstname("jubu");
     }
