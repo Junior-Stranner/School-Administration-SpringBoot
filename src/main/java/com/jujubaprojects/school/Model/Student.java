@@ -4,9 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
-
+@Table(name = "students")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +18,10 @@ public class Student {
     private String lastname;
     private int age;
     private double height;
+
+    @OneToOne
+    @JoinColumn(name = "codigo_professor" , referencedColumnName = "codigo")
+    private Professor professor;
 
     public Student(){
 
