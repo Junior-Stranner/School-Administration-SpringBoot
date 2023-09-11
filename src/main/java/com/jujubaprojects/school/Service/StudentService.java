@@ -22,7 +22,7 @@ public class StudentService {
 
     public ResponseEntity<?> cadastrar(Student student){
 
-        if(student.getFirstname().equals("")){
+        if(student.getName().equals("")){
             mensagem.setMensagem("enter the student's first name");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
         }else if(student.getLastname().equals("")){

@@ -18,9 +18,9 @@ public interface StudentRepository extends JpaRepository <Student, Long>{
 
      int countById(long id);
 
-     List<Student> findByfirstname(String firstname);
+     List<Student> findByName(String name);
 
-     List<Student> findByfirstnameStartsWith(String termo);
+     List<Student> findByNameStartsWith(String termo);
 
   @Query(value = "SELECT * FROM student WHERE age <= :age", nativeQuery = true)
     List<Student> ageMenorIgual(@Param("age") int age);

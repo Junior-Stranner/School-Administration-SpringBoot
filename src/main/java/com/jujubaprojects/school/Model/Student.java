@@ -14,10 +14,9 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String firstname;
+    private String name;
     private String lastname;
     private int age;
-    private double height;
 
     @OneToOne
     @JoinColumn(name = "codigo_professor" , referencedColumnName = "codigo")
@@ -28,43 +27,63 @@ public class Student {
     }
 
 
-    public Student(long id, String firstname, String lastname, int age, double height) {
+    public Student(long id, String name, String lastname, int age) {
         this.id = id;
-        this.firstname = firstname;
+        this.name = name;
         this.lastname = lastname;
         this.age = age;
-        this.height = height;
+       
     }
+
+
     public long getId() {
         return id;
     }
+
+
     public void setId(long id) {
         this.id = id;
     }
-    public String getFirstname() {
-        return firstname;
+
+
+    public String getName() {
+        return name;
     }
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+
+
+    public void setName(String name) {
+        this.name = name;
     }
+
+
     public String getLastname() {
         return lastname;
     }
+
+
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
+
     public int getAge() {
         return age;
     }
+
+
     public void setAge(int age) {
         this.age = age;
     }
-    public double getHeight() {
-        return height;
-    }
-    public void setHeight(double height) {
-        this.height = height;
+
+
+    public Professor getProfessor() {
+        return professor;
     }
 
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+   
     
 }

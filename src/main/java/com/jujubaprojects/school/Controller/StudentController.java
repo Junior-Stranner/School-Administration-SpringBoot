@@ -58,13 +58,13 @@ public class StudentController {
 
     @GetMapping("/school/beginWith")
     public List<Student> begingWitch(){
-        return studentRepository.findByfirstnameStartsWith("J");
+        return studentRepository.findByNameStartsWith("J");
 
     }
 
-    @GetMapping("/school/firstname")
-    public List<Student> firstnames(){
-        return studentRepository.findByfirstname("jubu");
+    @GetMapping("/school/name")
+    public List<Student> name(){
+        return studentRepository.findByName("jubu");
     }
 
     @DeleteMapping("/school/delete/{id}")
